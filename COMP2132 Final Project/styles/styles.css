@@ -1,0 +1,116 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #1A252F;
+  color: #ECF0F1;
+  text-align: center;
+  padding: 20px;
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+#game-container {
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+  border: 2px solid #2C3E50;
+  border-radius: 10px;
+  background-color: #2C3E50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#word-display {
+  font-size: 2em;
+  margin-bottom: 20px;
+  letter-spacing: 10px;
+  color: #ECF0F1;
+}
+
+#hangman-graphic {
+  margin: 20px 0;
+}
+
+#hangman-img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #E74C3C;
+  border-radius: 10px;
+}
+
+#letter-buttons {
+  margin: 20px 0;
+}
+
+.letter-button {
+  font-size: 1.2em;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: #E74C3C;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.letter-button:hover {
+  background-color: #3e5871;
+  transform: scale(1.1);
+}
+
+.letter-button.correct {
+  background-color: #f29f97;
+}
+
+.letter-button.incorrect {
+  background-color: #d62c1a;
+}
+
+#hint-button, #play-again-button {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #E74C3C;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#hint-button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+#hint-button:hover:not(:disabled), #play-again-button:hover {
+  background-color: #3e5871;
+  transform: scale(1.1);
+}
+
+#message {
+  font-size: 1.5em;
+  margin-top: 20px;
+  color: #E74C3C;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+#message.shake {
+  animation: shake 0.5s;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,119 @@
+$primary-color: #2C3E50;
+$secondary-color: #E74C3C;
+$background-color: #1A252F;
+$font-family: 'Roboto', sans-serif;
+$border-radius: 10px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+$hover-color: lighten($primary-color, 10%);
+$incorrect-color: darken($secondary-color, 10%);
+$correct-color: lighten($secondary-color, 20%);
+
+body {
+    font-family: $font-family;
+    background-color: $background-color;
+    color: #ECF0F1;
+    text-align: center;
+    padding: 20px;
+}
+
+h1, h2 {
+    font-weight: 700;
+}
+
+#game-container {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    border: 2px solid $primary-color;
+    border-radius: $border-radius;
+    background-color: $primary-color;
+    box-shadow: $box-shadow;
+}
+
+#word-display {
+    font-size: 2em;
+    margin-bottom: 20px;
+    letter-spacing: 10px;
+    color: #ECF0F1;
+}
+
+#hangman-graphic {
+    margin: 20px 0;
+}
+
+#hangman-img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid $secondary-color;
+    border-radius: $border-radius;
+}
+
+#letter-buttons {
+    margin: 20px 0;
+}
+
+.letter-button {
+    font-size: 1.2em;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: $border-radius;
+    background-color: $secondary-color;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.letter-button:hover {
+    background-color: $hover-color;
+    transform: scale(1.1);
+}
+
+.letter-button.correct {
+    background-color: $correct-color;
+}
+
+.letter-button.incorrect {
+    background-color: $incorrect-color;
+}
+
+#hint-button, #play-again-button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: $border-radius;
+    background-color: $secondary-color;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#hint-button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+#hint-button:hover:not(:disabled), #play-again-button:hover {
+    background-color: $hover-color;
+    transform: scale(1.1);
+}
+
+#message {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: $secondary-color;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+  }
+  
+  #message.shake {
+    animation: shake 0.5s;
+  }
